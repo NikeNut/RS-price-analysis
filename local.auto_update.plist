@@ -1,0 +1,52 @@
+<!-- <comment> Enable full disk access to bash & sh on mac </comment> -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>local.auto_update</string>
+        <key>Program</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/auto_update.sh</string>
+        <key>WorkingDirectory</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/</string>
+        <key>HardResourceLimits</key>
+        <dict>
+            <key>CPU</key>
+            <integer>900</integer>
+        </dict>
+        <key>SoftResourceLimits</key>
+        <dict>
+            <key>CPU</key>
+            <integer>780</integer>
+        </dict>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StartCalendarInterval</key>
+        <array>
+            <dict>
+                <key>Hour</key>
+                <integer>11</integer>
+                <key>Minute</key>
+                <integer>0</integer>
+            </dict>
+            <dict>
+                <key>Hour</key>
+                <integer>17</integer>
+                <key>Minute</key>
+                <integer>0</integer>
+            </dict>
+        </array>
+        <key>StandardInPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_update.stdin</string>
+        <key>StandardOutPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_update.stdout</string>
+        <key>StandardErrorPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_update.stderr</string>
+        <key>EnvironmentVariables</key>
+        <dict>
+        <key>PYTHONPATH</key><string>/Users/justin/.local/share/virtualenvs/RS_Price_Analysis-jhakbuL5/bin/python</string>
+        </dict>
+    </dict>
+</plist>
+
+
