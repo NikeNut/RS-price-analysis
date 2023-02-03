@@ -2,5 +2,6 @@
 cd ~/Documents/Python_Projects/RS_Price_Analysis/
 /Users/justin/.local/bin/pipenv run python RS_Pricing.py
 git add public/
-git commit -m "2022-10-16 17 site pub"
+cur_date=$(date +"%Y-%m-%dT%H:%M:%S")
+git commit -m "$cur_date site pub"
 git push -u origin main
