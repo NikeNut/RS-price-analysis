@@ -58,17 +58,17 @@ for item_id in osrs_item_ids:
         [
             df_timeseries, pl.DataFrame(
                 pd.json_normalize(response.json(), record_path=['data'])
-            ).lazy().with_column(
-                pl.lit(item_id).alias('id')
+            ).lazy().with_columns(
+                [pl.lit(item_id).alias('id')]
             ).with_columns(
                 [
                     pl.col("timestamp").cast(pl.Int64), pl.col("avgHighPrice").cast(pl.Int64), pl.col("avgLowPrice").cast(pl.Int64),
                     pl.col("highPriceVolume").cast(pl.Int64), pl.col("lowPriceVolume").cast(pl.Int64), pl.col("id").cast(pl.Int64)
                 ]
-            ).with_column(
-                (pl.col("timestamp") * 1e3).cast(pl.Datetime).dt.with_time_unit("ms").alias("datetime")
-            ).with_column(
-                pl.col("datetime").dt.strftime(fmt="%Y-%m-%d %H").cast(pl.Utf8).alias("ymd_h")
+            ).with_columns(
+                [(pl.col("timestamp") * 1e3).cast(pl.Datetime).dt.with_time_unit("ms").alias("datetime")]
+            ).with_columns(
+                [pl.col("datetime").dt.strftime(fmt="%Y-%m-%d %H").cast(pl.Utf8).alias("ymd_h")]
             ).collect()
         ], how = "diagonal", rechunk = True #vertical
     )
