@@ -1,0 +1,28 @@
+<!-- <comment> Enable full disk access to bash & sh on mac </comment> -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>local.auto_docker</string>
+        <key>Program</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/auto_docker.sh</string>
+        <key>WorkingDirectory</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/</string>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>StartInterval</key>
+        <integer>35</integer>
+        <key>StandardInPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stdin</string>
+        <key>StandardOutPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stdout</string>
+        <key>StandardErrorPath</key>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stderr</string>
+        <key>EnvironmentVariables</key>
+        <dict>
+        <key>DOCKERPATH</key><string>/usr/local/bin/docker</string>
+        </dict>
+    </dict>
+</plist>
+<!-- <comment> launchctl load /Users/justin/Documents/Python_Projects/RS_Price_Analysis/local.auto_docker.plist </comment> -->
