@@ -33,11 +33,11 @@
             </dict>
         </array>
         <key>StandardInPath</key>
-        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stdin</string>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_docker.stdin</string>
         <key>StandardOutPath</key>
-        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stdout</string>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_docker.stdout</string>
         <key>StandardErrorPath</key>
-        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.protect_backup.stderr</string>
+        <string>/Users/justin/Documents/Python_Projects/RS_Price_Analysis/logs/local.auto_docker.stderr</string>
         <key>EnvironmentVariables</key>
         <dict>
         <key>DOCKERPATH</key><string>/usr/local/bin/docker</string>
