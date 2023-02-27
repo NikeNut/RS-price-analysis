@@ -1,5 +1,6 @@
 #!/bin/bash
 # run docker container
+# must be run locally first: docker build -t rs_pricing_analysis .
 /usr/local/bin/docker run -e TZ=America/New_York --volume /Users/justin/Documents/Python_Projects/RS_Price_Analysis/data:/data --volume /Users/justin/Documents/Python_Projects/RS_Price_Analysis/public:/public rs_pricing_analysis
 # commit & push output HTML
 cd ~/Documents/Python_Projects/RS_Price_Analysis/
