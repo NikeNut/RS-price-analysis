@@ -1,0 +1,13 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+logs/
+Pipfile
+Pipfile.lock
+RS_Pricing.ipynb
+.git
+.gitignore
+.vscode/
+.ipynb_checkpoints/
