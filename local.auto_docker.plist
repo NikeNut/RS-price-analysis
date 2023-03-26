@@ -44,4 +44,5 @@
         </dict>
     </dict>
 </plist>
-<!-- <comment> launchctl load /Users/justin/Documents/Python_Projects/RS_Price_Analysis/local.auto_docker.plist </comment> -->
+<!-- <comment> cp /Users/justin/Documents/Python_Projects/RS_Price_Analysis/local.auto_docker.plist ~/Library/LaunchAgents/local.auto_docker.plist </comment> -->
+<!-- <comment> launchctl load ~/Library/LaunchAgents/local.auto_docker.plist </comment> -->
