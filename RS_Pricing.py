@@ -141,7 +141,7 @@ def gen_staff_markdown(df_map, df_results, x_battlestaff_id, orb_id, nature_id =
                         pl.col("last_avgLowPrice"),
                         pl.lit("and"),
                         pl.col("last_avgHighPrice")
-                    ], sep = " "
+                    ], separator = " "
                 )
             ).otherwise("").alias("extra_str")
         ]
@@ -183,7 +183,7 @@ def gen_bow_markdown(df_map, df_results, x_bow_id, log_id, nature_id = 561, bows
                         pl.col("last_avgLowPrice"),
                         pl.lit("and"),
                         pl.col("last_avgHighPrice")
-                    ], sep = " "
+                    ], separator = " "
                 )
             ).otherwise("").alias("extra_str")
         ]
