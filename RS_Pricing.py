@@ -195,6 +195,26 @@ def gen_bow_markdown(df_map, df_results, x_bow_id, log_id, nature_id = 561, bows
         "**Value**: *" + str(df_bowstring.select("discount")[0,0]) + "x against historical median*"
     )
     return(bow_string)
+def gen_sappling_markdown(df_map, df_results, x_sappling_id):
+    seed_lookup = {
+        5502: 5289, 5503: 5290, 21480: 21488,
+        5501: 5288, 5373: 5315
+    }
+
+    df_sappling = df_results.filter(pl.col("id") == x_sappling_id)
+
+    profit = (
+        df_results.filter(pl.col("id") == x_sappling_id).select("last_avgLowPrice").item()
+        -
+        df_results.filter(pl.col("id") == seed_lookup[x_sappling_id]).select("last_avgLowPrice").item()
+    )
+
+    sappling = (
+        "### " + df_sappling.select("name")[0,0] + ": \n" +
+        "**Profit**: *" + str(profit) + "* "
+    )
+
+    return(sappling)
 ## Generate HTML from Markdown
 # Write out to HTML file for publishing via GitHub Pages
 open((html_dir + "output.html"), "w").write(
@@ -204,7 +224,12 @@ open((html_dir + "output.html"), "w").write(
         gen_staff_markdown(df_map, df_results, x_battlestaff_id = 1399, orb_id = 575) + "\n" + "\n***\n" + 
         gen_staff_markdown(df_map, df_results, x_battlestaff_id = 1393, orb_id = 569) + "\n" + "\n***\n" + 
         gen_staff_markdown(df_map, df_results, x_battlestaff_id = 1395, orb_id = 571) + "\n\n" + "\n***\n" + 
-        gen_bow_markdown(df_map, df_results, x_bow_id = 855, log_id = 1515, nature_id = 561, bowstring_id = 1777) + "\n***\n"
+        gen_bow_markdown(df_map, df_results, x_bow_id = 855, log_id = 1515, nature_id = 561, bowstring_id = 1777) + "\n***\n" +
+        gen_sappling_markdown(df_map, df_results, x_sappling_id = 5502) + "\n***\n" +
+        gen_sappling_markdown(df_map, df_results, x_sappling_id = 5503) + "\n***\n" +
+        gen_sappling_markdown(df_map, df_results, x_sappling_id = 21480) + "\n***\n" +
+        gen_sappling_markdown(df_map, df_results, x_sappling_id = 5501) + "\n***\n" +
+        gen_sappling_markdown(df_map, df_results, x_sappling_id = 5373) + "\n***\n"
     )
 )
 # EOF
