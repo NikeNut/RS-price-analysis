@@ -34,7 +34,12 @@ df_map = pl.DataFrame(df_map).with_columns(
 #   - Unneeded for output items being high-alched
 #    - *but* query for items to be purchased solely for high alching profit
 osrs_item_ids = [
-    563, 562, 560, 565, 573, 569, 571, 1777, 5295, 257, 207, 99, 231, 139, 561, 575, 569, 571, 1515
+    563, 562, 560, 565, 573, 569, 571, 1777, 5295, 257, 207, 99, 231, 139, 561, 575, 569, 571, 1515,
+    5502, 5289, # palm [sappling|seed]
+    5503, 5290, # calquat [sappling|seed]
+    21480, 21488, # mahogany [sappling|seed]
+    5501, 5288, # papaya [sappling|seed]
+    5373, 5315 # yew [sappling|seed]
 ]
 osrs_high_alch_item_ids = [
     1397, 1399, 1393, 1395, 855
