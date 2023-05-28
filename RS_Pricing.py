@@ -209,9 +209,13 @@ def gen_sappling_markdown(df_map, df_results, x_sappling_id):
     df_sappling = df_results.filter(pl.col("id") == x_sappling_id)
 
     profit = (
-        df_results.filter(pl.col("id") == x_sappling_id).select("last_avgLowPrice").item()
+        df_results.filter(pl.col("id") == x_sappling_id).select(
+            pl.min(["last_avgLowPrice", "last_avgHighPrice", "med_avgHighPrice"])
+        ).item()
         -
-        df_results.filter(pl.col("id") == seed_lookup[x_sappling_id]).select("last_avgLowPrice").item()
+        df_results.filter(pl.col("id") == seed_lookup[x_sappling_id]).select(
+            pl.min(["last_avgLowPrice", "last_avgHighPrice", "med_avgHighPrice"])
+        ).item()
     )
 
     sappling = (
